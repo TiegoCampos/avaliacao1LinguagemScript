@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>segundos vividos</title>
+  </head>
+  <body>
+    <h1>calcule aqui quantos<br/>segundos você já viveu</h1>
+    <label for="data">você nasceu em:</label>
+    </br>
+    <input type="datetime-local" id="data" name="data">
+    <input type="submit" id="id_btn" value="CALCULAR">
+    </br>
+    </br>
+  <div id="id_saida">
+  </div>
+
+    <script>
+      id_btn.onclick = function(){
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+          id_saida.innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "enviaData$"+data.value, true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>
